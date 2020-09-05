@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/common/commondata.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    function filter(list, predicate) {
+        var newList = [];
+        for (var i = 0; i < list.length; i++) {
+            if (predicate(list[i])) newList.push(list[i]);
+        }
+        return newList;
+    }
+
+    function map(list, iteratee) {
+        var newList = [];
+        for (var i = 0; i < list.length; i++)
+            newList.push(iteratee(list[i]));
+        return newList;
+    }
+
+    var userUnder30 = filter(users, function (user) {
+        return user.age < 30;
+    })
+    console.log(userUnder30);
+    var ages = map(userUnder30, function (user) {
+        return user.age
+    })
+    console.log(ages);
+    var userOver30 = filter(users, function (user) {
+        return user.age>30;
+    })
+    var names=map(userOver30,function (user){return user.name});
+    console.log(names);
+</script>
+</body>
+</html>
