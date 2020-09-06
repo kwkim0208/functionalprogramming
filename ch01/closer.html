@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수와클로저에 대한 이해</title>
+    <script src="/common/commondata.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    function f1(){}
+    var a=typeof f1=='function'?f1:function (){};
+    function f2(){ return function (){}}
+    (function (a,b){return a+b;})(10,5);
+    function parent(){
+        var a=5;
+        function myfn(){
+            console.log(a);
+        }
+    }
+    function  f9(){
+        var a=10;
+        var f10=function (c){
+            return a+b+c;
+        };
+        var b=20;
+        return f10;
+    }
+    var f11=f9();
+    console.log(f11(30))
+    function callWith10(val,func){
+        return func(10,val);
+    }
+    var add =(a,b)=>{return a+b};
+    console.log(add(10,5))
+    var sub=(a,b)=>{return a-b};
+    function constant(val){
+        return function (){
+            return val;
+        }
+
+    }
+    var always10=constant(10);
+    /*아래만 10이 찍히는 이유?? */
+    console.log(always10);
+    console.log(always10());
+
+
+
+
+</script>
+</body>
+</html>
