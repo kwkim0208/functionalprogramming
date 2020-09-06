@@ -57,7 +57,39 @@
     console.log(L('n=>n*20')(20));
     console.log(L('n=>n*30')(30));
     console.log(L('a,b=>a+b')(10,20));
-
+    var f1=function (){
+        console.log(f1);
+    }
+    f1();
+    /*arguments의 이해와 활용*/
+    function test(a,b,c){
+        console.log("a b c",a,b,c);
+        console.log("this:",this);
+        console.log('arguments:',arguments);
+    }
+    test(10);
+    test(10,undefined);
+    test(10,20,30);
+    function test2(a,b){
+        b=10;
+        console.log(arguments);
+    }
+    test2(1);
+    test2(1,2);
+    var o1={name:'obj1'};
+    o1.test=test;
+    o1.test(3,2,1);
+    var a1=[1,2,3];
+    a1.test=test;
+    a1.test(3,3,3);
+    var o1_test=o1.test;
+    o1_test(5,6,7);
+    test.call(undefined,1,2,3);
+    test.call(null,1,2,3);
+    test.call(void 0,1,2,3);
+    test.call(o1,3,2,1);
+    console.log(o1.name)
+    test.call(1000,3,2,1);
 
 </script>
 </body>
