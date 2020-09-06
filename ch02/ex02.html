@@ -2,9 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>함수의 정의 및 이해</title>
 </head>
 <body>
+<script>
+    add1(10,5);
+    //Uncaught TypeError: add2 is not a function
+    //add2(10,5);
+    function add1(a,b){
+        return a+b;
+    }
+    var add2=function (a,b){
+        return a+b;
+    }
+    var m={
+        add3:function (a,b){
+            return a+b;
+        }
+    };
+    console.log(m.add3(5,5));
+    (function (a){
+        console.log(a);})(100);
+    !function (a){
+        console.log(a)
+    }(1);
+    true&&function (a){
+        console.log(a)
+    }(1);
+    1?function (a){
+        console.log(a)
+    }(1):5;
+    0,function (a){
+        console.log(a)
+    }(1);
+    var b=function (a){
+        console.log(a);
+    }(1);
+    function f2(){}
+    f2(function (a){
+        console.log(a)
+    }(1));
+    var f3=function c(a){
+        console.log(a);
+    }(1);
+    new function (){
+        console.log(1);
+    }
+    function L(str){
+        var splitted=str.split('=>');
+        return new Function(splitted[0],'return ('+splitted[1]+')');
+    }
 
+    console.log(L('n=>n*10')(10));
+    console.log(L('n=>n*20')(20));
+    console.log(L('n=>n*30')(30));
+    console.log(L('a,b=>a+b')(10,20));
+
+
+</script>
 </body>
 </html>
