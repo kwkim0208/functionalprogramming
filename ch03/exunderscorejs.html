@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Underscore.js 이해와 사용</title>
+   <script src="/lib/underscore.js"></script>
+    <script src="/common/commondata.js"></script>
+</head>
+<body>
+<script>
+    _.each([1, 2, 3], function (val, idx, list) {
+        console.log(val, idx, list);
+    });
+    [1, 2, 3].forEach(function (val, idx, list) {
+        console.log(val, idx, list)
+    });
+    var list=[1,2,3,4,5,6];
+    _.reject(list,function (num){return num%2===0;});
+   _.contains([1,2,3],3);
+    console.log(_.pluck(users,'name'));
+
+</script>
+</body>
+</html>

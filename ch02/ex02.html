@@ -9,6 +9,7 @@
     add1(10,5);
     //Uncaught TypeError: add2 is not a function
     //add2(10,5);
+
     function add1(a,b){
         return a+b;
     }
@@ -90,6 +91,10 @@
     test.call(o1,3,2,1);
     console.log(o1.name)
     test.call(1000,3,2,1);
+    test.apply(o1,[3,2,1]);
+    test.apply(1000,[3,2,1]);
+    o1.test.apply(undefined,[3,2,1]);
+    o1.test.apply([50],[3,2,1]);
 
 </script>
 </body>

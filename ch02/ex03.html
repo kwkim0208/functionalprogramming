@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if else|| && 삼항연산자 다시보기</title>
+</head>
+<body>
+<script>
+    var a;
+    if (a = 5) console.log(a);
+    if (a = 0) console.log(1);
+    else console.log(a);
+    if (!(a = false)) console.log(a);
+    if (a = 5 - 5) ;
+    console.log(a);
+    var obj={};
+    if(obj.a=5)console.log(obj.a);
+    if(obj.b=false) console.log(obj.b);
+    else console.log('hi');
+    var c;
+    if(c=obj.c=true) console.log(c);
+    function  add(a,b){
+        return a+b;
+    }
+    if(add(1,2)) console.log('hi1');
+    if(function (){return true;}()) console.log('hi');
+    var v1=true||false;
+    console.log(v1);
+    var v2=false||true;
+    console.log(v2);
+    var v3=true&&false;
+    console.log(v3);
+    var v4=false&&true;
+    console.log(v4);
+    var v5="hi"||"";
+    console.log(v5);
+    var v6=""||"hi";
+    console.log(v6);
+    var v7="hi"&&"";
+    console.log(v7);
+    var v8=""&&"hi";
+    console.log(v8);
+
+</script>
+</body>
+</html>
