@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Underscore.js 이해와 사용</title>
-   <script src="/lib/underscore.js"></script>
+    <script src="/lib/underscore.js"></script>
     <script src="/common/commondata.js"></script>
 </head>
 <body>
@@ -14,10 +14,17 @@
     [1, 2, 3].forEach(function (val, idx, list) {
         console.log(val, idx, list)
     });
-    var list=[1,2,3,4,5,6];
-    _.reject(list,function (num){return num%2===0;});
-   _.contains([1,2,3],3);
-    console.log(_.pluck(users,'name'));
+    var list = [1, 2, 3, 4, 5, 6];
+    _.reject(list, function (num) {
+        return num % 2 === 0;
+    });
+    _.contains([1, 2, 3], 3);
+
+
+
+    
+    console.log(_.pluck(users, 'name'));
+    console.log(_.first([5,4,3,2,1]));
 
 </script>
 </body>
