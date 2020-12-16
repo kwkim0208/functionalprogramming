@@ -27,7 +27,20 @@
         for(var i=0;i<list.length;i++)
             if(predicate(list[i],i,list)) return i;
     }
-
+    _.identity=function (v){return v;}
+    //false,undefined,null,0,NaN,"" bolean 값에서는 false
+    _.some=function (list){
+        return !!_.find(list,_.identity);
+    }
+    _.every=function (list){
+        return _.filter(list,_.identity).length==list.length;
+    }
+    function not(v){return!v;}
+    function beq(a){
+        return function (b){
+            return a===b;
+        }
+    }
 </script>
 </body>
 </html>
