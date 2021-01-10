@@ -7,7 +7,7 @@
 <body>
 <script>
     var users=[{id:1,name:"ID",age:32},{id:2,name:"HA",age:25},{id:3,name:"BJ",age:32},{id:4,name:"PJ",age:28},{id:5,name:"JE",age:27},{id:6,name:"JM",age:32},{id:7,name:"HI",age:24}];
-    _.map=function (list,iteratee){
+    _.map=function(list,iteratee){
         var new_list=[];
         for(var i=0;i<list.length;i++)
             new_list.push(iteratee(list[i],i,list));
@@ -30,10 +30,10 @@
     _.identity=function (v){return v;}
     //false,undefined,null,0,NaN,"" bolean 값에서는 false
     _.some=function (list){
-        return !!_.find(list,_.identity);
+        return not(not(positive(list)));
     }
     _.every=function (list){
-        return beq(-1)(_.findIndex(list,not));
+       return beq(-1)(negativeIndex(list));
     }
     function not(v){return!v;}
     function beq(a){
@@ -48,6 +48,10 @@
         return _.findIndex(list,not);
     }
 
+    console.log(_.some([0,null,2]));
+    console.log(_.some([0,null,false]));
+    console.log(_.every([0,null,2]));
+    console.log(_.every([{},true,2]));
 </script>
 </body>
 </html>
