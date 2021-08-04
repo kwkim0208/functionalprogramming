@@ -36,7 +36,16 @@
     _.value=function (list){
         return _.map(list,_.identity);
     }
-    ,./
+    _.args0=_.identity;
+    _.args1=function (a,b) {
+        return b;
+    }
+    _.keys=function (list) {
+        return _.map(list,_.args0);
+    }
+    console.log(_.keys([3,2,1]));
+    console.log(_.keys({id:5,name:"JE",age:27}));
+
 </script>
 </body>
 </html>
